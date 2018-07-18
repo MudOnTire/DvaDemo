@@ -17,10 +17,10 @@ const Products = ({ dispatch, products }) => {
     );
 };
 
-export default connect(
-    ({ products }) => {
-        return {
-            products
-        }
+const mapStateToProductsProps = (state) => {
+    return {
+        products: state.products
     }
-)(Products);
+}
+
+export default connect(mapStateToProductsProps)(Products);
